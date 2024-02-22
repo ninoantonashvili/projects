@@ -26,8 +26,12 @@ while True:
     choice = input("Enter choice (1/2/3/4): ")
 
     if choice in ('1', '2', '3', '4'):
-        num1 = float(input("Enter first number: "))
-        num2 = float(input("Enter second number: "))
+        try:
+            num1 = float(input("Enter first number: "))
+            num2 = float(input("Enter second number: "))
+        except ValueError:
+            print("Enter a vlid number")
+            continue
 
         if choice == '1':
             print("Result:", add(num1, num2))
